@@ -1,0 +1,32 @@
+[project]
+name = "elperuano-mcp"
+version = "0.3.1"
+description = "MCP server para buscar y leer el Diario Oficial El Peruano (busquedas.elperuano.pe)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+keywords = ["mcp", "peru", "el-peruano", "normas-legales", "busqueda", "diario-oficial"]
+authors = [{ name = "pipaacebedo" }]
+dependencies = [
+    "mcp>=1.28,<2",
+    "httpx>=0.27",
+    "python-dotenv>=1.0",
+    "pypdf>=4",
+]
+
+[project.urls]
+Homepage = "https://github.com/pipaacebedo/elPeruanoMCP"
+Issues = "https://github.com/pipaacebedo/elPeruanoMCP/issues"
+
+[project.scripts]
+elperuano-mcp = "cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+include = ["cli.py", "server.py"]
+
+[tool.uv]
+package = true

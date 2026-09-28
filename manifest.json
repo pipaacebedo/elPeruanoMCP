@@ -1,0 +1,27 @@
+{
+  "manifest_version": "0.4",
+  "name": "elperuano-mcp",
+  "display_name": "elPeruanoMCP",
+  "version": "0.3.1",
+  "description": "Busca y lee el Diario Oficial El Peruano (normas, resoluciones, cuadernillos y PDFs) desde tu harness MCP.",
+  "author": {
+    "name": "pipaacebedo",
+    "url": "https://github.com/pipaacebedo"
+  },
+  "license": "Apache-2.0",
+  "keywords": ["peru", "legal", "normas-legales", "el-peruano", "mcp"],
+  "server": {
+    "type": "uv",
+    "entry_point": "server.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": ["run", "--directory", "${__dirname}", "server.py"]
+    }
+  },
+  "compatibility": {
+    "platforms": ["darwin", "linux", "win32"],
+    "runtimes": {
+      "python": ">=3.10"
+    }
+  }
+}
